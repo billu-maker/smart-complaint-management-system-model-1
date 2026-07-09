@@ -1,0 +1,6 @@
+{
+  "name": "Smart Complaint Management System",
+  "description": "AI-powered complaint management platform for the Municipality of Kanyakumari District.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File a Complaint - Smart Complaint Management System</title>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Header -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo-section">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Smart Complaint Portal</span>
+            <span class="logo-sub">Kanyakumari Municipality</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="complaint.html" class="nav-link active">File Complaint</a>
+          <a href="tracking.html" class="nav-link">Track Complaint</a>
+          <a href="dashboard.html" class="nav-link">Statistics</a>
+          <a href="history.html" class="nav-link">Previous Complaints</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+      <div class="section-header">
+        <div class="badge badge-secondary">Secure Submission Portal</div>
+        <h1 class="section-title">Submit Civic Grievance</h1>
+        <p class="section-subtitle">
+          Submit your complaint to the Municipality of Kanyakumari. Our AI engine will immediately parse your submission, assign severity metrics, and route it to the appropriate engineering department.
+        </p>
+      </div>
+
+      <!-- Complaint Submission Form Card -->
+      <div class="portal-card form-card">
+        <form id="complaintForm" novalidate>
+          <div class="form-grid">
+            
+            <!-- Citizen Information Header -->
+            <div class="form-full" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-cog"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/><path d="m21.7 16.4-.7-.2"/><path d="m14.3 13.6-.7-.2"/><path d="m20.6 12.4-.2-.7"/><path d="m15.4 17.6-.2-.7"/><path d="m15.4 12.4.2-.7"/><path d="m20.6 17.6.2-.7"/><path d="m19 19.8-.2-.7"/><path d="m17 10.2-.2-.7"/></svg>
+                1. Citizen & Contact Information
+              </h3>
+            </div>
+
+            <div class="form-group">
+              <label for="citizenName">Full Name <span class="required">*</span></label>
+              <input type="text" id="citizenName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" placeholder="10-digit mobile number" required maxlength="10">
+            </div>
+
+            <div class="form-group form-full">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="citizen@example.com" required>
+            </div>
+
+            <!-- Complaint Details Header -->
+            <div class="form-full" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 1rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                2. Grievance Class & Assessment
+              </h3>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Grievance Category <span class="required">*</span></label>
+              <select id="category" required>
+                <option value="" disabled selected>Select category...</option>
+                <option value="water">Water Supply & Drainage Blockage</option>
+                <option value="waste">Waste Disposal & Sanitation Dump</option>
+                <option value="lights">Electrical / Street Lights Fault</option>
+                <option value="roads">Road Infrastructure & Potholes</option>
+                <option value="health">Public Health, Malaria & Mosquito Control</option>
+                <option value="general">General Administrative Query</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="priority">Urgency Priority Assessment <span class="required">*</span></label>
+              <select id="priority" required>
+                <option value="" disabled selected>Select priority...</option>
+                <option value="low">Low (Standard Maintenance)</option>
+                <option value="medium">Medium (Requires attention within 48h)</option>
+                <option value="high">High (Poses immediate disruption/leak)</option>
+                <option value="critical">Critical (Severe risk to life/safety)</option>
+              </select>
+            </div>
+
+            <div class="form-group form-full">
+              <label for="complaintTitle">Grievance Title <span class="required">*</span></label>
+              <input type="text" id="complaintTitle" placeholder="Provide a brief heading of the issue" required minlength="10">
+            </div>
+
+            <div class="form-group form-full">
+              <label for="complaintDescription">Detailed Description <span class="required">*</span></label>
+              <textarea id="complaintDescription" placeholder="Provide extensive details including landmarks, duration of issue, history, and impact on local residents." required minlength="30" maxlength="500"></textarea>
+              <div class="character-counter" id="descCounter">0 / 500 characters</div>
+            </div>
+
+            <!-- Location & Ward Header -->
+            <div class="form-full" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 1rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                3. Incident Location Coordinates
+              </h3>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Zone/Township <span class="required">*</span></label>
+              <select id="location" required>
+                <option value="" disabled selected>Select town locality...</option>
+                <option value="Nagercoil">Nagercoil Corporate Zone</option>
+                <option value="Kanyakumari Town">Kanyakumari Town Circle</option>
+                <option value="Colachel">Colachel Coastal Circle</option>
+                <option value="Kuzhithurai">Kuzhithurai Municipal Region</option>
+                <option value="Marthandam">Marthandam Market Hub</option>
+                <option value="Thuckalay">Thuckalay Taluk Circle</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="wardNumber">Ward Number <span class="required">*</span></label>
+              <input type="number" id="wardNumber" placeholder="Enter Ward No (1 to 52)" required min="1" max="52">
+            </div>
+
+            <div class="form-group form-full">
+              <label for="address">Full Street Address & Landmarks <span class="required">*</span></label>
+              <input type="text" id="address" placeholder="Door No, Street Name, Opp. landmarks, Kanyakumari" required>
+            </div>
+
+            <!-- Image Upload Header -->
+            <div class="form-full" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 1rem; margin-bottom: 0.5rem;">
+              <h3 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--primary); display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                4. Visual Proof Attachment
+              </h3>
+            </div>
+
+            <div class="form-full">
+              <div class="upload-container" id="dropZone">
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                <div class="upload-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload-cloud"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="m12 12-4 4h8z"/><path d="M12 12v9"/></svg>
+                </div>
+                <div class="upload-text">Drag and drop site photograph here, or <span style="color: var(--secondary); font-weight: 600;">browse locally</span></div>
+                <div class="upload-subtext">JPG, PNG, WebP supported. Max size 4MB. Providing a photo increases AI routing accuracy.</div>
+                
+                <!-- Hidden Base64 Holder -->
+                <input type="hidden" id="imagePreviewBase64">
+                
+                <!-- Visual thumbnail -->
+                <div style="display: flex; justify-content: center; width: 100%;">
+                  <div class="preview-container" id="previewContainer">
+                    <img src="" alt="Proof Preview" class="preview-image" id="previewImg">
+                    <button type="button" class="preview-remove" id="removePreviewBtn" aria-label="Remove Image">&times;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submission Area -->
+            <div class="form-full" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+              <button type="submit" class="btn btn-primary w-full" id="submitBtn" style="padding: 1rem; font-size: 1.05rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Submit Secure Complaint
+              </button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo-section" style="color: #fff;">
+            <div class="logo-icon" style="background: #fff; color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="footer-logo-text">Kanyakumari Municipality</span>
+          </div>
+          <p class="footer-desc">
+            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Portal</a></li>
+            <li><a href="complaint.html">File Grievance</a></li>
+            <li><a href="tracking.html">Track Complaint</a></li>
+            <li><a href="dashboard.html">Municipal Statistics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Citizen Help</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="contact.html">Office Directory</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Framework</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Municipal Connect</h5>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
+        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+      </div>
+    </footer>
+
+    <!-- Shared Success Dialog / Modal Layout -->
+    <div class="modal-overlay" id="successModalOverlay">
+      <div class="modal">
+        <div class="modal-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="modal-title" id="mTitle">Operation Successful</h3>
+        <p class="modal-desc" id="mDesc">Action completed successfully.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button class="btn btn-primary" data-close-modal style="flex:1;">Acknowledge</button>
+          <a href="#" id="mCta" class="btn btn-secondary" style="display:none; flex:1;">Track Status</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Essential Javascript Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/webhook.js"></script>
+    <script src="/js/validation.js"></script>
+    <script src="/js/app.js"></script>
+
+    <!-- Attachment & Submit Execution Handler -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("complaintForm");
+        const dropZone = document.getElementById("dropZone");
+        const fileInput = document.getElementById("imageUpload");
+        const base64Input = document.getElementById("imagePreviewBase64");
+        const previewContainer = document.getElementById("previewContainer");
+        const previewImg = document.getElementById("previewImg");
+        const removePreviewBtn = document.getElementById("removePreviewBtn");
+        const submitBtn = document.getElementById("submitBtn");
+
+        // 1. Initialize character count & real-time validations
+        window.Validation.setupRealtimeValidation(form);
+
+        // 2. Drag-and-drop triggers
+        dropZone.addEventListener("click", (e) => {
+          if (e.target !== removePreviewBtn && !removePreviewBtn.contains(e.target)) {
+            fileInput.click();
+          }
+        });
+
+        dropZone.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          dropZone.classList.add("dragover");
+        });
+
+        dropZone.addEventListener("dragleave", () => {
+          dropZone.classList.remove("dragover");
+        });
+
+        dropZone.addEventListener("drop", (e) => {
+          e.preventDefault();
+          dropZone.classList.remove("dragover");
+          if (e.dataTransfer.files.length > 0) {
+            handleImageFile(e.dataTransfer.files[0]);
+          }
+        });
+
+        fileInput.addEventListener("change", () => {
+          if (fileInput.files.length > 0) {
+            handleImageFile(fileInput.files[0]);
+          }
+        });
+
+        removePreviewBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          fileInput.value = "";
+          base64Input.value = "";
+          previewContainer.style.display = "none";
+          previewImg.src = "";
+        });
+
+        function handleImageFile(file) {
+          if (!file.type.startsWith("image/")) {
+            alert("Only image files (JPG, PNG, WebP) are allowed.");
+            return;
+          }
+          if (file.size > 4 * 1024 * 1024) {
+            alert("Image exceeds the maximum file size constraint of 4MB.");
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const base64Data = e.target.result;
+            base64Input.value = base64Data;
+            previewImg.src = base64Data;
+            previewContainer.style.display = "flex";
+          };
+          reader.readAsDataURL(file);
+        }
+
+        // 3. Final Form Submit Handler
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          
+          // Clear active validation alerts
+          const isValid = window.Validation.validateForm(form);
+          if (!isValid) {
+            // Scroll to first error element for focus
+            const firstErr = form.querySelector(".form-group.error");
+            if (firstErr) {
+              firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+          }
+
+          // Trigger visual loading animation states
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `
+            <svg class="animate-pulse" style="width:18px; height:18px; animation: pulse 1s infinite; margin-right:8px;" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"></path></svg>
+            AI Categorization & Department Allocation Underway...
+          `;
+
+          // Prepare payload
+          const payload = {
+            citizenName: document.getElementById("citizenName").value.trim(),
+            phoneNumber: document.getElementById("phone").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            category: document.getElementById("category").value,
+            priority: document.getElementById("priority").value,
+            title: document.getElementById("complaintTitle").value.trim(),
+            description: document.getElementById("complaintDescription").value.trim(),
+            location: document.getElementById("location").value,
+            wardNumber: document.getElementById("wardNumber").value,
+            address: document.getElementById("address").value.trim(),
+            imagePreview: base64Input.value || null
+          };
+
+          try {
+            // Submit to modular API controller (adds to localStorage, triggers webhooks)
+            const result = await window.API.submitComplaint(payload);
+            
+            // Revert loading button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Submit Secure Complaint
+            `;
+
+            // Reset Form Fields
+            form.reset();
+            base64Input.value = "";
+            previewContainer.style.display = "none";
+            previewImg.src = "";
+
+            // Show glorious premium success popup with redirect action!
+            window.showSuccessModal(
+              "Complaint Registered Successfully",
+              `Your grievance has been assigned case number: ${result.id}. Direct auto-routing forwarded it to the ${result.assignedDepartment}.`,
+              `tracking.html?id=${result.id}`
+            );
+          } catch (err) {
+            console.error(err);
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Secure Complaint";
+            alert("Error connecting with Municipal Gateway node. Try again later.");
+          }
+        });
+
+      });
+    </script>
+  </body>
+</html>

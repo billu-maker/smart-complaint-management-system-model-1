@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Municipal Analytics Dashboard - Smart Complaint Management System</title>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Header -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo-section">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Smart Complaint Portal</span>
+            <span class="logo-sub">Kanyakumari Municipality</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="complaint.html" class="nav-link">File Complaint</a>
+          <a href="tracking.html" class="nav-link">Track Complaint</a>
+          <a href="dashboard.html" class="nav-link active">Statistics</a>
+          <a href="history.html" class="nav-link">Previous Complaints</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+      <div class="section-header" style="margin-bottom: 3.5rem;">
+        <div class="badge badge-secondary">Public Integrity Ledger</div>
+        <h1 class="section-title">Administrative Performance Board</h1>
+        <p class="section-subtitle">
+          Examine live statistics, resolution ratios, and departmental benchmarks for Kanyakumari District. We believe in administrative transparency to build citizen confidence.
+        </p>
+      </div>
+
+      <!-- Dashboard Visual Layout -->
+      <div class="stats-dashboard">
+        
+        <!-- Summary counters row -->
+        <div class="stats-summary">
+          
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #3B82F6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-open"><path d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Total Submissions</span>
+              <span class="summary-val" id="statTotal">--</span>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #10B981;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-check"><path d="M18 6 7 17l-5-5"/><path d="m22 10-7.5 7.5L13 16"/></svg>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Resolved cases</span>
+              <span class="summary-val" id="statResolved">--</span>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #F59E0B;">
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; line-height: 1;">⌛</span>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Awaiting Allocation</span>
+              <span class="summary-val" id="statPending">--</span>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #6366F1;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-construction"><rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7"/><path d="M7 14v7"/><path d="M2 11h20"/><path d="m8 6 2-4h4l2 4"/></svg>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Active Repair</span>
+              <span class="summary-val" id="statProgress">--</span>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #EF4444;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Rejected / Private</span>
+              <span class="summary-val" id="statRejected">--</span>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <div class="summary-icon" style="background-color: #14B8A6;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="summary-details">
+              <span class="summary-label">Avg. Close Rate</span>
+              <span class="summary-val" id="statAvgTime">--</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Charts grid section -->
+        <div class="charts-section">
+          
+          <!-- Category distribution (Pie Chart) -->
+          <div class="portal-card">
+            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pie-chart"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+              Grievance Category Allocation
+            </h3>
+            <div class="chart-container">
+              <canvas id="chartCategory"></canvas>
+            </div>
+          </div>
+
+          <!-- Ward Distribution (Bar Chart) -->
+          <div class="portal-card">
+            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+              Incident Load by Municipal Ward
+            </h3>
+            <div class="chart-container">
+              <canvas id="chartWards"></canvas>
+            </div>
+          </div>
+
+          <!-- Monthly Trend (Line Chart) - Full Width -->
+          <div class="portal-card chart-card-full">
+            <h3 class="card-title" style="font-size: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart"><path d="m19 20-4-4-4 4-5-5M3 3v18h18"/><circle cx="19" cy="20" r="1"/><circle cx="15" cy="16" r="1"/><circle cx="11" cy="20" r="1"/><circle cx="6" cy="15" r="1"/></svg>
+              Intake vs. Closure Chronological Trend
+            </h3>
+            <div class="chart-container">
+              <canvas id="chartTrend"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo-section" style="color: #fff;">
+            <div class="logo-icon" style="background: #fff; color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="footer-logo-text">Kanyakumari Municipality</span>
+          </div>
+          <p class="footer-desc">
+            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Portal</a></li>
+            <li><a href="complaint.html">File Grievance</a></li>
+            <li><a href="tracking.html">Track Complaint</a></li>
+            <li><a href="dashboard.html">Municipal Statistics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Citizen Help</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="contact.html">Office Directory</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Framework</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Municipal Connect</h5>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
+        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+      </div>
+    </footer>
+
+    <!-- Essential Javascript Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/webhook.js"></script>
+    <script src="/js/charts.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

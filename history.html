@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previous Complaints Ledger - Smart Complaint Management System</title>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Header -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo-section">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Smart Complaint Portal</span>
+            <span class="logo-sub">Kanyakumari Municipality</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="complaint.html" class="nav-link">File Complaint</a>
+          <a href="tracking.html" class="nav-link">Track Complaint</a>
+          <a href="dashboard.html" class="nav-link">Statistics</a>
+          <a href="history.html" class="nav-link active">Previous Complaints</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <div class="badge badge-secondary">Public Record Archives</div>
+        <h1 class="section-title">Public Grievance Ledger</h1>
+        <p class="section-subtitle">
+          Browse previously reported incidents, status closures, and official inspection notes. Clear accountability filters allow you to monitor civic actions transparently.
+        </p>
+      </div>
+
+      <!-- Advanced Filter & Search Bar -->
+      <div class="filter-bar">
+        <form id="filterForm" onsubmit="event.preventDefault();">
+          <div class="filter-grid">
+            
+            <div class="form-group" style="gap:0.25rem;">
+              <label for="filterSearch" style="font-size:0.8rem; color:var(--text-muted);">Text Search</label>
+              <input type="text" id="filterSearch" placeholder="Search ID, title, keywords..." style="padding: 0.6rem 0.9rem;">
+            </div>
+
+            <div class="form-group" style="gap:0.25rem;">
+              <label for="filterCategory" style="font-size:0.8rem; color:var(--text-muted);">Category</label>
+              <select id="filterCategory" style="padding: 0.6rem 0.9rem;">
+                <option value="all">All Categories</option>
+                <option value="water">Water & Drainage</option>
+                <option value="waste">Waste & Sanitation</option>
+                <option value="lights">Street Lights</option>
+                <option value="roads">Road Infrastructure</option>
+                <option value="health">Public Health</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="gap:0.25rem;">
+              <label for="filterStatus" style="font-size:0.8rem; color:var(--text-muted);">Resolution Status</label>
+              <select id="filterStatus" style="padding: 0.6rem 0.9rem;">
+                <option value="all">All Statuses</option>
+                <option value="pending">Pending Assignment</option>
+                <option value="in_progress">Work Started</option>
+                <option value="resolved">Resolved / Closed</option>
+                <option value="rejected">Rejected / Out-of-bounds</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="gap:0.25rem;">
+              <label for="filterDepartment" style="font-size:0.8rem; color:var(--text-muted);">Routing Department</label>
+              <select id="filterDepartment" style="padding: 0.6rem 0.9rem;">
+                <option value="all">All Divisions</option>
+                <option value="water">Water Supply Division</option>
+                <option value="sanitation">Health & Sanitation</option>
+                <option value="electrical">Electrical Lighting</option>
+                <option value="roads">Roads Construction</option>
+              </select>
+            </div>
+
+            <button type="button" id="resetFiltersBtn" class="btn btn-secondary" style="padding: 0.65rem 1.2rem; height: 38px;">
+              Reset Filters
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- Complaint Grid -->
+      <div class="history-grid" id="historyGrid">
+        <!-- Dynamic Cards Inserted Here -->
+      </div>
+
+      <!-- Pagination Footer -->
+      <div class="pagination" id="pagination">
+        <!-- Dynamic buttons added here -->
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo-section" style="color: #fff;">
+            <div class="logo-icon" style="background: #fff; color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="footer-logo-text">Kanyakumari Municipality</span>
+          </div>
+          <p class="footer-desc">
+            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Portal</a></li>
+            <li><a href="complaint.html">File Grievance</a></li>
+            <li><a href="tracking.html">Track Complaint</a></li>
+            <li><a href="dashboard.html">Municipal Statistics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Citizen Help</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="contact.html">Office Directory</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Framework</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Municipal Connect</h5>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
+        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+      </div>
+    </footer>
+
+    <!-- Essential Javascript Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/webhook.js"></script>
+    <script src="/js/app.js"></script>
+
+    <!-- Ledger Binding Logic -->
+    <script>
+      let currentPage = 1;
+      const itemsLimit = 6;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("filterSearch");
+        const categorySelect = document.getElementById("filterCategory");
+        const statusSelect = document.getElementById("filterStatus");
+        const departmentSelect = document.getElementById("filterDepartment");
+        const resetBtn = document.getElementById("resetFiltersBtn");
+
+        // Event listeners for active filters
+        const triggerReload = () => {
+          currentPage = 1;
+          loadHistoryLedger();
+        };
+
+        searchInput.addEventListener("input", triggerReload);
+        categorySelect.addEventListener("change", triggerReload);
+        statusSelect.addEventListener("change", triggerReload);
+        departmentSelect.addEventListener("change", triggerReload);
+
+        resetBtn.addEventListener("click", () => {
+          document.getElementById("filterForm").reset();
+          triggerReload();
+        });
+
+        // Load initially
+        loadHistoryLedger();
+      });
+
+      async function loadHistoryLedger() {
+        const grid = document.getElementById("historyGrid");
+        if (!grid) return;
+
+        // Show loading skeleton grid
+        grid.innerHTML = Array(3).fill(0).map(() => `
+          <div class="complaint-card text-center animate-pulse" style="animation: pulse 1.5s infinite; border-color: var(--border-color);">
+            <div style="height:15px; width:40%; background-color:#E2E8F0; margin-bottom:1rem; border-radius:4px;"></div>
+            <div style="height:25px; width:70%; background-color:#E2E8F0; margin-bottom:1rem; border-radius:4px;"></div>
+            <div style="height:80px; width:100%; background-color:#E2E8F0; margin-bottom:1rem; border-radius:4px;"></div>
+            <div style="height:20px; width:50%; background-color:#E2E8F0; border-radius:4px;"></div>
+          </div>
+        `).join("");
+
+        // Build active filters structure
+        const filters = {
+          search: document.getElementById("filterSearch").value,
+          category: document.getElementById("filterCategory").value,
+          status: document.getElementById("filterStatus").value,
+          department: document.getElementById("filterDepartment").value,
+          page: currentPage,
+          limit: itemsLimit
+        };
+
+        try {
+          const result = await window.API.getComplaintHistory(filters);
+          renderGrid(result.complaints);
+          renderPagination(result.pagination);
+        } catch (err) {
+          console.error("Ledger rendering failure:", err);
+          grid.innerHTML = `
+            <div class="portal-card text-center" style="grid-column: span 3;">
+              <h3 class="card-title" style="color: var(--status-rejected);">Access Denied</h3>
+              <p class="card-desc">Failed to connect with the municipal central ledger data node.</p>
+            </div>
+          `;
+        }
+      }
+
+      function renderGrid(complaints) {
+        const grid = document.getElementById("historyGrid");
+        if (complaints.length === 0) {
+          grid.innerHTML = `
+            <div class="portal-card text-center animate-fade" style="grid-column: span 3; padding: 4rem 2rem;">
+              <div class="card-icon" style="background-color: rgba(245, 158, 11, 0.08); color: var(--status-pending); margin: 0 auto 1.5rem auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-code"><path d="m13 13.5 2-2.5-2-2.5"/><path d="m21 21-4.3-4.3"/><path d="M9 8.5 7 11l2 2.5"/><circle cx="11" cy="11" r="8"/></svg>
+              </div>
+              <h3 class="card-title">No Matching Complaints</h3>
+              <p class="card-desc">We couldn't locate any public complaints that match your specific filter attributes.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = complaints.map(c => {
+          const statusText = c.status.toUpperCase().replace('_', ' ');
+          const dateStr = new Date(c.createdAt).toLocaleDateString();
+          const closedStr = c.resolvedAt ? new Date(c.resolvedAt).toLocaleDateString() : "Active Case";
+
+          // Format categories to reader labels
+          const categoryLabels = {
+            water: "Water Supply",
+            waste: "Garbage & Sanitation",
+            lights: "Electrical/Lighting",
+            roads: "Roads & Highway",
+            health: "Malaria/Public Health",
+            general: "General Inquiry"
+          };
+          const catLabel = categoryLabels[c.category] || "Other Grievance";
+
+          return `
+            <div class="complaint-card animate-fade">
+              <div class="complaint-header">
+                <span class="complaint-id">${c.id}</span>
+                <span class="status-badge ${c.status}">${statusText}</span>
+              </div>
+              <div class="complaint-body">
+                <span class="badge badge-primary" style="font-size:0.65rem; padding:0.2rem 0.5rem; margin-bottom:0.5rem; background-color: rgba(15,23,42,0.04);">${catLabel}</span>
+                <h4 class="complaint-title">${c.title}</h4>
+                <p class="complaint-desc">${c.description}</p>
+                
+                <div class="complaint-meta">
+                  <div class="complaint-meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    <span>Filed: ${dateStr}</span>
+                  </div>
+                  <div class="complaint-meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Ward ${c.wardNumber} - ${c.location}</span>
+                  </div>
+                  <div class="complaint-meta-item" style="grid-column: span 2;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+                    <span>${c.assignedDepartment}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem;">
+                <a href="details.html?id=${c.id}" class="btn btn-primary w-full" style="padding: 0.55rem; font-size: 0.85rem;">
+                  Case Sheet Details
+                </a>
+                <a href="tracking.html?id=${c.id}" class="btn btn-secondary" style="padding: 0.55rem; font-size: 0.85rem;" title="View Live Track">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </a>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      function renderPagination(paging) {
+        const pCon = document.getElementById("pagination");
+        if (!pCon) return;
+
+        if (paging.totalPages <= 1) {
+          pCon.innerHTML = "";
+          return;
+        }
+
+        let btnsHtml = `
+          <button class="pagination-btn" ${paging.currentPage === 1 ? 'disabled' : ''} onclick="changePage(${paging.currentPage - 1})" aria-label="Previous Page">
+            &laquo;
+          </button>
+        `;
+
+        for (let i = 1; i <= paging.totalPages; i++) {
+          btnsHtml += `
+            <button class="pagination-btn ${paging.currentPage === i ? 'active' : ''}" onclick="changePage(${i})">
+              ${i}
+            </button>
+          `;
+        }
+
+        btnsHtml += `
+          <button class="pagination-btn" ${paging.currentPage === paging.totalPages ? 'disabled' : ''} onclick="changePage(${paging.currentPage + 1})" aria-label="Next Page">
+            &raquo;
+          </button>
+        `;
+
+        pCon.innerHTML = btnsHtml;
+      }
+
+      window.changePage = function(pageNumber) {
+        currentPage = pageNumber;
+        loadHistoryLedger();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+    </script>
+  </body>
+</html>

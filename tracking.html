@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Complaint - Smart Complaint Management System</title>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Header -->
+    <header>
+      <div class="nav-container">
+        <a href="index.html" class="logo-section">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Smart Complaint Portal</span>
+            <span class="logo-sub">Kanyakumari Municipality</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="complaint.html" class="nav-link">File Complaint</a>
+          <a href="tracking.html" class="nav-link active">Track Complaint</a>
+          <a href="dashboard.html" class="nav-link">Statistics</a>
+          <a href="history.html" class="nav-link">Previous Complaints</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <div class="badge badge-secondary">Real-Time Telemetry Tracking</div>
+        <h1 class="section-title">Case Progression Tracker</h1>
+        <p class="section-subtitle">
+          Query your ticket file status immediately. Provide your unique case ID or registered mobile phone number to trace chronological resolution stages, assigned sanitary engineers, and progress remarks.
+        </p>
+      </div>
+
+      <!-- Search Box Card -->
+      <div class="portal-card search-card" style="margin-bottom: 4rem;">
+        <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--primary); display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Search Grievance Database
+        </h3>
+        
+        <div class="search-box">
+          <input type="text" id="searchQuery" placeholder="Enter Complaint ID (e.g. KKM-2026-8912) or Phone Number">
+          <button type="button" class="btn btn-primary" id="searchBtn" style="padding: 0 1.5rem;">
+            Query Node
+          </button>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem; font-family: var(--font-mono);">
+          Format hint: KKM-2026-XXXX or 10-digit citizen phone number.
+        </p>
+      </div>
+
+      <!-- Live Search / Timeline Container -->
+      <div id="trackingResults" style="display: grid; gap: 2rem;">
+        
+        <!-- Default State Greeting Card -->
+        <div class="portal-card text-center" style="grid-column: span 2; padding: 3.5rem 2rem;">
+          <div class="card-icon" style="background-color: rgba(37, 99, 235, 0.05); color: var(--accent); margin: 0 auto 1.5rem auto;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <h3 class="card-title">Awaiting Search Request</h3>
+          <p class="card-desc" style="max-width: 500px; margin: 0 auto 1.5rem auto;">
+            Input your credentials above to load our interactive visual tracking layout. If you don't have a complaint registered yet, you can create one in under 2 minutes.
+          </p>
+          <a href="complaint.html" class="btn btn-primary">File New Complaint</a>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo-section" style="color: #fff;">
+            <div class="logo-icon" style="background: #fff; color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="footer-logo-text">Kanyakumari Municipality</span>
+          </div>
+          <p class="footer-desc">
+            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Portal</a></li>
+            <li><a href="complaint.html">File Grievance</a></li>
+            <li><a href="tracking.html">Track Complaint</a></li>
+            <li><a href="dashboard.html">Municipal Statistics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Citizen Help</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="contact.html">Office Directory</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Framework</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Municipal Connect</h5>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
+        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+      </div>
+    </footer>
+
+    <!-- Essential Javascript Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/webhook.js"></script>
+    <script src="/js/tracking.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

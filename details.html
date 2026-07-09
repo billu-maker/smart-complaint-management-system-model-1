@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Case Sheet - Smart Complaint Management System</title>
+    <!-- Premium Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+      /* Page specific enhancements for prints */
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        .portal-card {
+          box-shadow: none !important;
+          border: 1px solid #000 !important;
+          background: #fff !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Sticky Navigation Header (no-print) -->
+    <header class="no-print">
+      <div class="nav-container">
+        <a href="index.html" class="logo-section">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-title">Smart Complaint Portal</span>
+            <span class="logo-sub">Kanyakumari Municipality</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="complaint.html" class="nav-link">File Complaint</a>
+          <a href="tracking.html" class="nav-link">Track Complaint</a>
+          <a href="dashboard.html" class="nav-link">Statistics</a>
+          <a href="history.html" class="nav-link active">Previous Complaints</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+      <div class="section-header no-print" style="margin-bottom: 2.5rem;">
+        <div class="badge badge-primary">Official Case Record</div>
+        <h1 class="section-title">Municipal Incident Case Sheet</h1>
+        <p class="section-subtitle">
+          Authorized public report document containing technical diagnostic details, assigned field supervisors, action logs, and site resolution visual proof.
+        </p>
+      </div>
+
+      <!-- Main Action Buttons for Printing (no-print) -->
+      <div class="no-print" style="display: flex; gap: 1rem; justify-content: flex-end; max-width: 1100px; margin: 0 auto 1.5rem auto;">
+        <button id="downloadBtn" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          Download PDF Copy
+        </button>
+        <button id="printBtn" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-printer"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+          Print Case Document
+        </button>
+      </div>
+
+      <!-- Dynamic Details Container -->
+      <div id="detailsContainer" style="max-width: 1100px; margin: 0 auto;">
+        
+        <!-- Loading Skeleton -->
+        <div class="portal-card text-center animate-pulse" style="animation: pulse 1.5s infinite;">
+          <h3 class="card-title">Securing Secure Ledger Connection...</h3>
+          <p class="card-desc">Syncing file sheet with Kanyakumari Local Administration node...</p>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Footer (no-print) -->
+    <footer class="no-print">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <div class="logo-section" style="color: #fff;">
+            <div class="logo-icon" style="background: #fff; color: var(--primary);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <span class="footer-logo-text">Kanyakumari Municipality</span>
+          </div>
+          <p class="footer-desc">
+            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Portal</a></li>
+            <li><a href="complaint.html">File Grievance</a></li>
+            <li><a href="tracking.html">Track Complaint</a></li>
+            <li><a href="dashboard.html">Municipal Statistics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Citizen Help</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="contact.html">Office Directory</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Framework</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Municipal Connect</h5>
+          <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
+            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
+        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+      </div>
+    </footer>
+
+    <!-- Essential Javascript Modules -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/webhook.js"></script>
+    <script src="/js/app.js"></script>
+
+    <!-- Page Specific Case Sheet Loader -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        const container = document.getElementById("detailsContainer");
+
+        const printBtn = document.getElementById("printBtn");
+        const downloadBtn = document.getElementById("downloadBtn");
+
+        // Set up Print behaviors
+        if (printBtn) {
+          printBtn.addEventListener("click", () => window.print());
+        }
+
+        if (downloadBtn) {
+          downloadBtn.addEventListener("click", () => {
+            alert("Generating dynamic PDF document package for download...\nYour case report will save directly.");
+            window.print(); // Falls back to system print-to-PDF which handles our stylesheet perfectly!
+          });
+        }
+
+        if (!id) {
+          container.innerHTML = `
+            <div class="portal-card text-center">
+              <h3 class="card-title" style="color:var(--status-rejected);">No Case ID Specified</h3>
+              <p class="card-desc" style="margin-bottom:1.5rem;">Please provide a valid case identifier parameter in the URL search query.</p>
+              <a href="history.html" class="btn btn-primary">Go to Public Ledger</a>
+            </div>
+          `;
+          return;
+        }
+
+        try {
+          const complaint = await window.API.getComplaint(id);
+          if (!complaint) {
+            container.innerHTML = `
+              <div class="portal-card text-center">
+                <h3 class="card-title" style="color:var(--status-rejected);">Record Not Found</h3>
+                <p class="card-desc" style="margin-bottom:1.5rem;">Case reference ID [${id}] does not match any index in the Municipality Database.</p>
+                <a href="history.html" class="btn btn-primary">Go to Public Ledger</a>
+              </div>
+            `;
+            return;
+          }
+
+          renderCaseSheet(complaint, container);
+        } catch (err) {
+          console.error(err);
+          container.innerHTML = `
+            <div class="portal-card text-center">
+              <h3 class="card-title" style="color:var(--status-rejected);">Network Disruption</h3>
+              <p class="card-desc">Failed to download the requested municipal case sheet.</p>
+            </div>
+          `;
+        }
+      });
+
+      function renderCaseSheet(c, container) {
+        const dateStr = new Date(c.createdAt).toLocaleString();
+        const closedStr = c.resolvedAt ? new Date(c.resolvedAt).toLocaleString() : "Awaiting Operational Close";
+        
+        const categoryLabels = {
+          water: "Water Supply & Drainage Blockage",
+          waste: "Waste Disposal & Sanitation Dump",
+          lights: "Electrical / Street Lights Fault",
+          roads: "Road Infrastructure & Potholes",
+          health: "Public Health / Malaria Vector Control",
+          general: "General Administrative Inquiry"
+        };
+        const catLabel = categoryLabels[c.category] || "Other Civic Grievance";
+
+        // Setup mock resolution proof if resolved
+        let resolutionHtml = "";
+        if (c.status === "resolved") {
+          resolutionHtml = `
+            <div class="form-full" style="margin-top:2rem;">
+              <h3 class="details-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                5. Resolution Visual Verification & Sign-off
+              </h3>
+              <div class="image-gallery" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                <div>
+                  <div class="gallery-item" style="border-radius:8px; border: 1px solid var(--border-color); overflow:hidden;">
+                    <img src="${c.imageUrl || 'https://images.unsplash.com/photo-1584267326895-d88975a6f312?auto=format&fit=crop&w=600&q=80'}" alt="Before photo">
+                  </div>
+                  <div class="gallery-label">Citizen Submission (Original State)</div>
+                </div>
+                <div>
+                  <div class="gallery-item" style="border-radius:8px; border:1px solid var(--border-color); overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="After resolved photo">
+                  </div>
+                  <div class="gallery-label">Engineering Site Resolution (Restored State)</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        container.innerHTML = `
+          <div class="portal-card animate-fade" style="display: flex; flex-direction: column; gap: 2.5rem; border-color: var(--primary);">
+            
+            <!-- Technical Document Header -->
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; border-bottom: 2px solid var(--primary); padding-bottom:1.5rem;">
+              <div>
+                <span class="logo-sub" style="font-size:0.75rem;">Government of Tamil Nadu</span>
+                <h2 style="font-family:var(--font-display); font-size:1.8rem; color:var(--primary); line-height:1.2; margin-bottom:0.25rem;">Municipality of Kanyakumari</h2>
+                <p style="font-size:0.85rem; color:var(--text-muted);">Civic Redressal Ledger Node &bull; Engineering Service Record</p>
+              </div>
+              <div style="text-align:right;">
+                <span class="status-badge ${c.status}" style="font-size:0.9rem; padding: 0.4rem 1rem; font-family:var(--font-mono); font-weight:700;">
+                  ${c.status.toUpperCase().replace('_', ' ')}
+                </span>
+                <p style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700; color:var(--text-main); margin-top:0.75rem;">ID: ${c.id}</p>
+              </div>
+            </div>
+
+            <!-- Grid details -->
+            <div class="details-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+              
+              <!-- Left side (Citizen Info & Category) -->
+              <div>
+                <h3 class="details-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  1. Citizen & Filing Parameters
+                </h3>
+                <table class="info-table">
+                  <tr>
+                    <td class="label-td">Filer Name:</td>
+                    <td class="val-td">${c.citizenName}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Registered Mobile:</td>
+                    <td class="val-td">${c.phoneNumber}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Registered Email:</td>
+                    <td class="val-td" style="word-break: break-all;">${c.email}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Grievance Category:</td>
+                    <td class="val-td">${catLabel}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Filing Date-Time:</td>
+                    <td class="val-td">${dateStr}</td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- Right side (Technical allocation details) -->
+              <div>
+                <h3 class="details-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  2. Administrative Routing Index
+                </h3>
+                <table class="info-table">
+                  <tr>
+                    <td class="label-td">Routed Department:</td>
+                    <td class="val-td" style="font-weight:600; color:var(--primary);">${c.assignedDepartment}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Supervising Officer:</td>
+                    <td class="val-td">${c.assignedOfficer}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Assigned Priority:</td>
+                    <td class="val-td" style="text-transform:uppercase; font-weight:700; color:${c.priority === 'critical' ? 'var(--status-rejected)' : (c.priority === 'high' ? 'var(--status-pending)' : 'var(--accent)')};">${c.priority}</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Locality Zone:</td>
+                    <td class="val-td">${c.location} (Ward ${c.wardNumber})</td>
+                  </tr>
+                  <tr>
+                    <td class="label-td">Closure Timestamp:</td>
+                    <td class="val-td">${closedStr}</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+
+            <!-- Middle sections: Description and Location Coordinates -->
+            <div style="border-top:1px solid var(--border-color); padding-top:2rem;">
+              <h3 class="details-section-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                3. Technical Grievance Statement & Coordinates
+              </h3>
+              <div style="background-color:var(--bg-page); border: 1px solid var(--border-color); border-radius:8px; padding:1.5rem; margin-top:1rem;">
+                <h4 style="font-family:var(--font-display); font-size:1.15rem; color:var(--primary); margin-bottom:0.75rem;">Subject: ${c.title}</h4>
+                <p style="font-size:0.95rem; color:var(--text-main); line-height:1.6; white-space:pre-line; margin-bottom:1.5rem;">${c.description}</p>
+                <p style="font-size:0.85rem; color:var(--text-muted);">
+                  <strong>Primary Location Pin:</strong> ${c.address}
+                </p>
+              </div>
+            </div>
+
+            <!-- Middle sections: Officer diagnostic remarks and proof photos -->
+            <div style="border-top:1px solid var(--border-color); padding-top:2rem; display:grid; grid-template-columns:1.2fr 0.8fr; gap:3rem; align-items:start;">
+              <div>
+                <h3 class="details-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  4. Engineering Diagnostics & Supervisor Notes
+                </h3>
+                <div style="background-color:rgba(5, 150, 105, 0.02); border-left:4px solid var(--secondary); border-radius: 0 8px 8px 0; padding:1.5rem; margin-top:1rem;">
+                  <h4 style="font-size:1rem; color:var(--primary); margin-bottom:0.5rem; font-weight:600;">Supervising Officer Diagnostics:</h4>
+                  <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5; font-style:italic;">"${c.officerRemarks || 'No diagnosis remarks uploaded yet by assigned sanitary field inspectors.'}"</p>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="details-section-title">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21L15.5 15.5M15.5 15.5C16.7118 14.2882 17.5 12.5934 17.5 10.75C17.5 7.02208 14.4779 4 10.75 4C7.02208 4 4 7.02208 4 10.75C4 14.4779 7.02208 17.5 10.75 17.5C12.5934 17.5 14.2882 16.7118 15.5 15.5Z"/></svg>
+                  Proof Attachment
+                </h3>
+                ${c.imageUrl ? `
+                  <div class="gallery-item" style="border-radius:8px; border:1px solid var(--border-color); overflow:hidden; margin-top:1rem; aspect-ratio:4/3; max-height:220px;">
+                    <img src="${c.imageUrl}" alt="Citizen submission Attachment">
+                  </div>
+                ` : `
+                  <div style="text-align:center; padding: 2rem; border:2px dashed var(--border-color); border-radius:8px; color:var(--text-light); margin-top:1rem; font-size:0.9rem;">
+                    No site photograph attached during citizen intake.
+                  </div>
+                `}
+              </div>
+            </div>
+
+            <!-- Resolution verification images -->
+            ${resolutionHtml}
+
+            <!-- Verification Stamp -->
+            <div style="margin-top:3rem; border-top:1px dashed var(--border-color); padding-top:2rem; display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <span style="font-size:0.75rem; color:var(--text-light); font-family:var(--font-mono); display:block;">Secure Integrity Ledger Reference</span>
+                <span style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">HASH: MD5-e7a912fc0021b38914aa78cc289fcd1a</span>
+              </div>
+              <div style="text-align:right;">
+                <div style="width:140px; height:60px; border:2px solid var(--secondary); color:var(--secondary); border-radius:8px; display:flex; flex-direction:column; align-items:center; justify-content:center; transform: rotate(-3deg);">
+                  <span style="font-size:0.5rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700;">Municipality</span>
+                  <span style="font-family:var(--font-display); font-weight:800; font-size:0.95rem; line-height:1;">VERIFIED</span>
+                  <span style="font-size:0.45rem; letter-spacing:0.05em;">SCMS AI CORE</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>
