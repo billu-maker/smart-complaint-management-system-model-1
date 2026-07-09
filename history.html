@@ -9,18 +9,53 @@
   </head>
   <body>
 
-    <!-- Sticky Navigation Header -->
-    <header>
+    <!-- Top Government Banner -->
+    <div class="gov-top-bar no-print">
+      <div class="gov-top-container">
+        <div class="gov-left">
+          <span class="gov-flag"></span>
+          <span class="gov-dept">Government of Tamil Nadu | Municipality of Kanyakumari District</span>
+        </div>
+        <div class="gov-right">
+          <a href="#main-content" class="gov-skip">Skip to Main Content</a>
+          <span class="gov-separator">|</span>
+          <div class="gov-lang-switcher">
+            <span class="lang-btn active" onclick="alert('Language set to English')">English</span>
+            <span class="lang-btn" onclick="alert('மொழி தமிழுக்கு மாற்றப்பட்டது')">தமிழ்</span>
+          </div>
+          <span class="gov-separator">|</span>
+          <span class="gov-contact-num">Emergency Helpline: 1800-425-4433</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="no-print">
       <div class="nav-container">
         <a href="index.html" class="logo-section">
-          <div class="logo-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div class="logo-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="gov-seal-svg" width="48" height="48">
+              <circle cx="50" cy="50" r="46" fill="none" stroke="#0B3C5D" stroke-width="3"/>
+              <circle cx="50" cy="50" r="41" fill="none" stroke="#1F6F4A" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <path d="M50 15 L53 25 L63 25 L55 31 L58 41 L50 35 L42 41 L45 31 L37 25 L47 25 Z" fill="#0B3C5D"/>
+              <path d="M25 50 C25 65, 75 65, 75 50" fill="none" stroke="#0B3C5D" stroke-width="3" stroke-linecap="round"/>
+              <path d="M35 50 C35 58, 65 58, 65 50" fill="none" stroke="#1F6F4A" stroke-width="1.5" stroke-linecap="round"/>
+              <text x="50" y="76" font-family="sans-serif" font-size="7" font-weight="bold" fill="#0B3C5D" text-anchor="middle">TAMIL NADU</text>
+              <text x="50" y="85" font-family="sans-serif" font-size="5" font-weight="normal" fill="#6B7280" text-anchor="middle">MUNICIPALITY</text>
+            </svg>
           </div>
           <div class="logo-text">
             <span class="logo-title">Smart Complaint Portal</span>
-            <span class="logo-sub">Kanyakumari Municipality</span>
+            <span class="logo-sub">Kanyakumari District Municipality</span>
           </div>
         </a>
+
+        <div class="header-search-box">
+          <input type="text" placeholder="Search Portal (e.g. Streetlights, Ward 14)..." id="portalSearch" onkeypress="if(event.key === 'Enter') { alert('Search function: Searching for ' + this.value); }">
+          <button type="button" class="btn-search" onclick="alert('Searching...')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+        </div>
 
         <button class="menu-toggle" aria-label="Toggle Menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -30,11 +65,15 @@
           <a href="index.html" class="nav-link">Home</a>
           <a href="complaint.html" class="nav-link">File Complaint</a>
           <a href="tracking.html" class="nav-link">Track Complaint</a>
-          <a href="dashboard.html" class="nav-link">Statistics</a>
           <a href="history.html" class="nav-link active">Previous Complaints</a>
+          <a href="dashboard.html" class="nav-link">Statistics</a>
           <a href="about.html" class="nav-link">About</a>
           <a href="contact.html" class="nav-link">Contact</a>
-          <a href="complaint.html" class="nav-link nav-cta">File Complaint</a>
+          <span class="nav-separator-v">|</span>
+          <a href="#" class="nav-link citizen-login-btn" onclick="alert('Citizen Login Section: System under deployment integration.')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Login
+          </a>
         </nav>
       </div>
     </header>
@@ -118,13 +157,10 @@
       <div class="footer-container">
         <div class="footer-brand">
           <div class="logo-section" style="color: #fff;">
-            <div class="logo-icon" style="background: #fff; color: var(--primary);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            </div>
             <span class="footer-logo-text">Kanyakumari Municipality</span>
           </div>
           <p class="footer-desc">
-            Smart Complaint Management System (SCMS). Integrating Artificial Intelligence, automation webhooks, and transparent tracking grids to build a cleaner, smarter Kanyakumari.
+            Official Citizen Grievance Portal. Powered by standard AI parsing algorithms and transparent workflow pipelines under the urban local governance board of Nagercoil & Kanyakumari.
           </p>
         </div>
 
@@ -134,36 +170,36 @@
             <li><a href="index.html">Home Portal</a></li>
             <li><a href="complaint.html">File Grievance</a></li>
             <li><a href="tracking.html">Track Complaint</a></li>
-            <li><a href="dashboard.html">Municipal Statistics</a></li>
+            <li><a href="history.html">Previous Grievances</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h5>Citizen Help</h5>
+          <h5>Citizen Center</h5>
           <ul class="footer-links">
-            <li><a href="about.html">About SCMS Node</a></li>
+            <li><a href="about.html">About SCMS</a></li>
             <li><a href="contact.html">Office Directory</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Framework</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Citizen Charter</a></li>
           </ul>
         </div>
 
         <div class="footer-column">
-          <h5>Municipal Connect</h5>
+          <h5>Commissioner Office</h5>
           <p class="footer-desc" style="margin-bottom: 1rem; font-size: 0.85rem;">
-            Nagercoil Main Rd, Kanyakumari District, Tamil Nadu, 629001
+            Municipal Office Complex, Nagercoil Main Road, Kanyakumari District, Tamil Nadu, 629001
           </p>
           <div class="footer-socials">
-            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
-            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-            <a href="#" class="footer-social-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+            <a href="#" class="footer-social-btn" aria-label="Official Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg></a>
+            <a href="#" class="footer-social-btn" aria-label="Official Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="footer-social-btn" aria-label="National Portal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>&copy; 2026 Municipality of Kanyakumari District. All Rights Reserved.</span>
-        <span>Managed by Department of Urban Local Bodies (ULB), Tamil Nadu.</span>
+        <span>Managed by Department of Municipal Administration, Tamil Nadu.</span>
       </div>
     </footer>
 
